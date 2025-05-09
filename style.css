@@ -65,6 +65,7 @@
         --orange: #E89005;
         --gray: #878E88;
         --aqua: #08B2E3;
+        --vp-cutoff : #202020;
 }
 
 .sr-only {
@@ -83,7 +84,7 @@
 /* default page styles, width/bg etc*/
     html {
         font-size: medium;
-        background-color: #202020;
+        background-color: var(--vp-cutoff);
     }
     header, main, footer {
         width: 1280px;
@@ -350,9 +351,106 @@
         height: 75px;
         font-size: 2rem;
     }
+
+
     #cart {
         height: 720px;
+        grid-column: 1/3;
+        outline: 5px solid var(--white);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px;
+        grid-auto-rows: 300px;
+        gap: 25px;
+        padding: 1rem;
     }
+    #cart h2 {
+        grid-column: 1/-1;
+        /* padding: 1rem; */
+    }
+    #cart section {
+        height: 300px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+    #cart h3 {
+        grid-column: 1/-1;
+    }
+    h3 {
+        font-family: var(--font_body);
+        color: var(--fpc-red);
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    #cart img {
+        height: 200px;
+        grid-column: 1/3;
+    }
+    #cart p {
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        height: 75px;
+        font-size: 1.25rem;
+        
+    }
+    #cart span {
+        text-decoration: line-through;
+        font-size: .75rem;
+    }
+    #cart button {
+        background-color: transparent;
+        width: 75px;
+        height: 75px;
+    }
+    #cart .added {
+        background-color: var(--fpc-red);
+    }
+    #cart svg {
+        height: 50px;
+        width: 50px;
+    }
+    #cart section:last-of-type {
+        grid-row: 2/-1;
+        height: 600px;
+        grid-column: 4/5;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #cart-sidebar h3 {
+        /* grid-column: auto; */
+        
+        font-size: 2rem;
+
+        grid-column: 1/2;
+        /* grid-row: 1/2; */
+    }
+    #cart-sidebar svg {
+        
+        grid-column: 2/3;
+        /* grid-row: 1/2; */
+    }
+    #cart #cart-sidebar p {
+        height: auto;
+    }
+    #cart section:last-of-type #cart-items {
+        grid-row: auto;
+        grid-column: 1/3;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    #cart section:last-of-type #cart-items[class="hidden-js"] {
+        display: none;
+    }
+    #cart-sidebar button {
+        grid-column: 1/3;
+        background-color: var(--black);
+        color: var(--white)
+    }
+
 
     /*section 3*/
         #contact-us {
